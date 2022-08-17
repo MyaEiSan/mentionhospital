@@ -1,124 +1,124 @@
-$(document).ready(function(){
-	// console.log('hi');
+$(document).ready(function() {
+    // console.log('hi');
 
-	// Start Header Section
-	// Start Banner Section
-	// $(".carousel").carousel(function(){
-	// 	interval : 500
-	// });
-	// End Banner Section
-	// End Header Section
+    // Start Header Section
+    // Start Banner Section
+    // $(".carousel").carousel(function(){
+    // 	interval : 500
+    // });
+    // End Banner Section
+    // End Header Section
 
-	// Start Info Section
-	$(window).scroll(function(){
-		let getscrollpoint = $(this).scrollTop();
-		// console.log(getscrollpoint);
+    // Start Info Section
+    $(window).scroll(function() {
+        let getscrollpoint = $(this).scrollTop();
+        // console.log(getscrollpoint);
 
-		if(getscrollpoint >= 220){
-			$(".infotexts").addClass("fromlefts");
-			$(".infopics").addClass("fromrights");
-		}else{
-			$(".infotexts").removeClass("fromlefts");
-			$(".infopics").removeClass("fromrights");
-		}
+        if (getscrollpoint >= 220) {
+            $(".infotexts").addClass("fromlefts");
+            $(".infopics").addClass("fromrights");
+        } else {
+            $(".infotexts").removeClass("fromlefts");
+            $(".infopics").removeClass("fromrights");
+        }
 
-	});
-
-	// End Info Section  
-
-	// Start ADV Section
-    $("#videos").click(function(){
-    	var getmodal = $(this).data("bs-target");
-    	var getvideosrc = $(this).data("video");
-    	var videourlwithauto = getvideosrc+"?autoplay=1";
-
-    	$(getmodal + " iframe").attr("src",videourlwithauto);
-
-    	$(getmodal + " button.btn-close").click(function(){
-    		$(getmodal+ " iframe").attr("src",getvideosrc);
-    	});
-
-    	$(getmodal).click('hidden.bs.modal',function(){
-    		$(getmodal+" iframe").attr("src",getvideosrc);
-    	});
     });
-	// ENd ADV Section
 
-	// Start Premises Section
+    // End Info Section  
 
-	$("#lightslider").lightSlider({
-		// auto:true,
-		item:4,
-        loop:true,
-        slideMove:1,
-        speed:600
-	}).play();
+    // Start ADV Section
+    $("#videos").click(function() {
+        var getmodal = $(this).data("bs-target");
+        var getvideosrc = $(this).data("video");
+        var videourlwithauto = getvideosrc + "?autoplay=1";
 
-	// End Premises Section
+        $(getmodal + " iframe").attr("src", videourlwithauto);
 
-	// Start Pricing Section
+        $(getmodal + " button.btn-close").click(function() {
+            $(getmodal + " iframe").attr("src", getvideosrc);
+        });
 
-	$(window).scroll(function(){
-		let getscroll = $(this).scrollTop();
-		// console.log(getscroll);
+        $(getmodal).on('hidden.bs.modal', function() {
+            $(getmodal + " iframe").attr("src", getvideosrc);
+        });
+    });
+    // ENd ADV Section
 
-		if(getscroll >= 2450){
-			$(".cardones").addClass("movelefts");
-			$(".cardtwos").addClass("movebottoms");
-			$(".cardthrees").addClass("moverights");
-		}else{
-			$(".cardones").removeClass("movelefts");
-			$(".cardtwos").removeClass("movebottoms");
-			$(".cardthrees").removeClass("moverights");
-		}
-	});
+    // Start Premises Section
 
-	// End Pricing Section
+    $("#lightslider").lightSlider({
+        // auto:true,
+        item: 4,
+        loop: true,
+        slideMove: 1,
+        speed: 600
+    }).play();
 
-	// Start Join Us Section
-	$("#accordion").accordion();
-	// End Join Us Section
+    // End Premises Section
 
-	// Start Footer Section
-	$("#getyear").text(new Date().getUTCFullYear());
-	// End Footer Section
+    // Start Pricing Section
 
-	// Start Progress
-	$(window).scroll(function(){
-		var getprogress = $("#progresses");
-		var getprogressval = $("#progressvalues");
-		var getscrolltop = $(this).scrollTop();
-		// console.log(getscrolltop);
+    $(window).scroll(function() {
+        let getscroll = $(this).scrollTop();
+        // console.log(getscroll);
 
-		// formula st * 100 / (pjheight - cvheight)
+        if (getscroll >= 2450) {
+            $(".cardones").addClass("movelefts");
+            $(".cardtwos").addClass("movebottoms");
+            $(".cardthrees").addClass("moverights");
+        } else {
+            $(".cardones").removeClass("movelefts");
+            $(".cardtwos").removeClass("movebottoms");
+            $(".cardthrees").removeClass("moverights");
+        }
+    });
 
-		// By Jquery
-		// var getscrollheight = $(document).height();
-		// console.log(getscrollheight);
-		// var getclientheight = $(window).height();
-		// console.log(getclientheight);
-		// var calcheight = getscrollheight - getclientheight;
-		// var getfinalheight = Math.round(getscrolltop * 100 / calcheight);
-		// console.log(getfinalheight);
+    // End Pricing Section
+
+    // Start Join Us Section
+    $("#accordion").accordion();
+    // End Join Us Section
+
+    // Start Footer Section
+    $("#getyear").text(new Date().getUTCFullYear());
+    // End Footer Section
+
+    // Start Progress
+    $(window).scroll(function() {
+        var getprogress = $("#progresses");
+        var getprogressval = $("#progressvalues");
+        var getscrolltop = $(this).scrollTop();
+        // console.log(getscrolltop);
+
+        // formula st * 100 / (pjheight - cvheight)
+
+        // By Jquery
+        // var getscrollheight = $(document).height();
+        // console.log(getscrollheight);
+        // var getclientheight = $(window).height();
+        // console.log(getclientheight);
+        // var calcheight = getscrollheight - getclientheight;
+        // var getfinalheight = Math.round(getscrolltop * 100 / calcheight);
+        // console.log(getfinalheight);
 
 
-		// By Javascript
+        // By Javascript
 
-		var getscrollheight = document.documentElement.scrollHeight;
-		// console.log(getscrollheight);
-		var getclientheight = document.documentElement.clientHeight;
-		// console.log(getclientheight);
-		var calcheight = getscrollheight - getclientheight;
-		var getfinalheight = Math.round(getscrolltop * 100 / calcheight);
-		// console.log(getfinalheight);
+        var getscrollheight = document.documentElement.scrollHeight;
+        // console.log(getscrollheight);
+        var getclientheight = document.documentElement.clientHeight;
+        // console.log(getclientheight);
+        var calcheight = getscrollheight - getclientheight;
+        var getfinalheight = Math.round(getscrolltop * 100 / calcheight);
+        // console.log(getfinalheight);
 
-		getprogressval.text(`${getfinalheight}%`);
-		getprogress.css({
-			"background":`conic-gradient(steelblue ${getfinalheight}%,#eee ${getfinalheight}%)`
-		});
-	});
-	// End Progress
-	
+        getprogressval.text(`${getfinalheight}%`);
+        getprogress.css({
+            "background": `conic-gradient(steelblue ${getfinalheight}%,#eee ${getfinalheight}%)`
+        });
+    });
+    // End Progress
+
 });
 
 // 28FR
